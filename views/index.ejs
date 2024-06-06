@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P2P Chat App</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div class="header">
+        <img src="/images/logo.png" alt="Logo" class="logo">
+        <h1>Multi-Room Chat</h1>
+        <p id="yourname">You:</p>
+        <input type="text" id="username" placeholder="Enter your name" autocomplete="off">
+        <input type="text" id="room" placeholder="Enter room name" autocomplete="off">
+        <button id="join-room">Join Room</button>
+      </div>
+      <div id="rooms-container" class="rooms-container"></div>
+    </div>
+    <div class="chat-window">
+      <div id="chat-header" class="chat-header"></div>
+      <div id="messages" class="messages"></div>
+      <div class="message-form-container">
+        <input type="file" id="file-input" class="file-input">
+        <button id="send-file" class="file-button">
+          <img src="/images/pics.png" alt="Attachment" class="icon">
+        </button>
+        <input type="text" id="message" placeholder="Type ur Message here" autocomplete="off" class="message-input">
+        <button id="send-message" class="send-button">
+          <img src="/images/701491_paperfly_send_icon (1).png" alt="Send" class="icon">
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

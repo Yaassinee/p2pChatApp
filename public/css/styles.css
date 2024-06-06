@@ -1,0 +1,156 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .sidebar {
+    width: 25%;
+    background: #3f51b5;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+  }
+  
+  .sidebar .header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar .logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar h1 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar p {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar input {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .sidebar button {
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .sidebar button:hover {
+    background-color: #45a049;
+  }
+  
+  .rooms-container {
+    width: 100%;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  
+  .room {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #5c6bc0;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .room:hover {
+    background-color: #7986cb;
+  }
+  
+  .chat-window {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+  }
+  
+  .chat-header {
+    padding: 20px;
+    background: #3f51b5;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+  }
+  
+  .message-form-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-top: 1px solid #ccc;
+    background-color: #333;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  
+  .file-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    margin-right: 10px;
+    background-color: #444;
+    color: white;
+  }
+  
+  .send-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%);
+  }
+  
+  
