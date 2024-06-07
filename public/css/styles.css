@@ -1,156 +1,230 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  color: #333;
+}
+
+#login-container, #register-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  margin: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"], input[type="password"] {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+button {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#chat-container {
+  display: none;
+  width: 90%;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  height: 80vh;
+}
+
+#sidebar {
+  width: 25%;
+  background-color: #1f2937;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#sidebar .room {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  background-color: #374151;
+  cursor: pointer;
+  color: #fff;
+}
+
+#sidebar .room:hover, #sidebar .room.active {
+  background-color: #4b5563;
+}
+
+#sidebar button {
+  margin-top: auto;
+}
+
+#main-chat {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#chat-header {
+  padding: 10px;
+  background-color: #3b82f6;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+#messages {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f9fafb;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#room, #message {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: calc(100% - 24px);
+}
+
+#join-room, #send-message {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#join-room:hover, #send-message:hover {
+  background-color: #45a049;
+}
+
+#rooms-container {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.room {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  background-color: #f3f4f6;
+  cursor: pointer;
+}
+
+.room:hover {
+  background-color: #e2e8f0;
+}
+
+@media (max-width: 600px) {
+  #login-container, #register-container {
+    width: 95%;
   }
-  
-  .container {
-    display: flex;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .sidebar {
-    width: 25%;
-    background: #3f51b5;
-    color: white;
-    padding: 20px;
-    display: flex;
+
+  #chat-container {
     flex-direction: column;
-    align-items: center;
-    border-right: 1px solid #ccc;
-    overflow-y: auto;
+    height: auto;
   }
-  
-  .sidebar .header {
+
+  #sidebar, #main-chat {
     width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
   }
-  
-  .sidebar .logo {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-  }
-  
-  .sidebar h1 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-  
-  .sidebar p {
-    font-size: 1em;
-    margin-bottom: 20px;
-  }
-  
-  .sidebar input {
-    width: calc(100% - 40px);
+
+  #sidebar {
+    height: auto;
     padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
   }
-  
-  .sidebar button {
+
+  #main-chat {
     padding: 10px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
   }
-  
-  .sidebar button:hover {
-    background-color: #45a049;
-  }
-  
-  .rooms-container {
-    width: 100%;
-    flex-grow: 1;
-    overflow-y: auto;
-  }
-  
-  .room {
-    width: calc(100% - 40px);
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #5c6bc0;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-  .room:hover {
-    background-color: #7986cb;
-  }
-  
-  .chat-window {
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-  }
-  
-  .chat-header {
-    padding: 20px;
-    background: #3f51b5;
-    color: white;
-    text-align: center;
-    font-size: 1.2em;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .messages {
-    flex-grow: 1;
-    padding: 20px;
-    overflow-y: auto;
-    background-color: #f5f5f5;
-  }
-  
-  .message-form-container {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    border-top: 1px solid #ccc;
-    background-color: #333;
-    border-radius: 0 0 10px 10px;
-  }
-  
-  .file-input {
-    display: none;
-  }
-  
-  .file-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  .message-input {
-    flex-grow: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    margin-right: 10px;
-    background-color: #444;
-    color: white;
-  }
-  
-  .send-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .icon {
-    width: 24px;
-    height: 24px;
-    filter: invert(100%);
-  }
-  
-  
+}
+#created-room-info {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #1f3768;
+  border-radius: 4px;
+  text-align: left;
+}
+.room {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 5px 0;
+}
+
+.room-key {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.room .delete-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#username-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#disconnect {
+  margin-left: 10px;
+}
